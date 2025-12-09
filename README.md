@@ -85,53 +85,38 @@ Step 1: Start the Server (Terminal 1)
 
 Run the server. It will create a storage_root directory in the current folder.
 Bash
-
+```bash
 ./dcfs_server
+```
 # Output: Server listening on port 8080...
 
 Step 2: Start the Sync Daemon (Terminal 2)
 
 Run the background daemon. This handles networking for the client.
 Bash
-
+```bash
 ./dcfs_sync_daemon
+```
 # Output: Daemon started. Listening for IPC on /tmp/dcfs.sock...
 
 Step 3: Mount the Filesystem (Terminal 3)
 
 Create a mount point and start the FUSE client.
 Bash
-
+```bash
 mkdir mnt
 ./dcfs_client mnt
+```
 # Output: Filesystem mounted at mnt/
 
 Step 4: Interact!
 
 You can now use the mnt directory like a normal folder.
 Bash
-
+```bash
 cd mnt
 echo "Hello Distributed World" > hello.txt
 ls -l
 cat hello.txt
-
-Check the output in Terminal 2 (Daemon) and Terminal 1 (Server) to see the file being uploaded in the background!
-📂 Project Structure
-Plaintext
-```bash
-dcfs/
-├── client/
-│   ├── fuse_ops.c       # FUSE callbacks (read, write, getattr)
-│   ├── sync_daemon.c    # Background networking process
-│   └── cache_manager.c  # Manages local hidden cache
-├── server/
-│   ├── main.c           # Entry point and thread pool setup
-│   ├── storage.c        # Disk I/O operations
-│   └── db_ops.c         # SQLite metadata handling
-├── common/
-│   ├── protocol.h       # Shared structs and IPC definitions
-│   └── utils.c          # Helper functions
-├── CMakeLists.txt       # Build configuration
-└── README.md            # This file
 ```
+Check the output in Terminal 2 (Daemon) and Terminal 1 (Server) to see the file being uploaded in the background!
