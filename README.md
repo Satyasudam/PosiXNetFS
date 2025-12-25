@@ -10,7 +10,7 @@ This project demonstrates advanced Linux System Programming concepts including *
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 * **Local-Speed Performance:** Uses a local cache for all reads and writes; network operations are asynchronous.
 * **Offline Capability:** Continue editing files even when the server is unreachable. Changes sync automatically upon reconnection.
@@ -20,7 +20,7 @@ This project demonstrates advanced Linux System Programming concepts including *
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 The system consists of three main components:
 
@@ -29,7 +29,7 @@ The system consists of three main components:
 3.  **DCFS Server:** A multi-threaded TCP server using `epoll` for high concurrency. It persists files to disk and manages metadata in a SQLite database.
 
    
-🛠️ Prerequisites
+ Prerequisites
 
 To build DCFS, you need a Linux environment with the following dependencies:
 
@@ -52,7 +52,7 @@ Bash
 
 sudo dnf install cmake gcc-c++ fuse3-devel sqlite-devel
 
-📦 Build Instructions
+ Build Instructions
 
     Clone the repository:
     Bash
@@ -78,7 +78,7 @@ This will generate the following executables:
 
     ./dcfs_cli
 
-💻 Usage Guide
+ Usage Guide
 
 To run the system, you will need three separate terminal windows.
 Step 1: Start the Server (Terminal 1)
